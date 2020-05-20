@@ -14,7 +14,8 @@ jobs:
         with:
           java-version: 11
       - name: Startup test database instance
-        run: sudo service mysql start
+        run: |
+          sudo /etc/init.d/mysql start
       - name: Create test database
         run: |
           mysql -uroot -proot < databases/create_databases.sql
